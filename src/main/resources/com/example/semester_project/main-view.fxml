@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.0" prefWidth="800.0" styleClass="container" stylesheets="@style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semester_project.MainController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="193.3333282470703" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="211.33331298828125" minWidth="10.0" prefWidth="202.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="225.0" minWidth="10.0" prefWidth="213.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="192.0" minWidth="10.0" prefWidth="192.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="180.3333282470703" minHeight="10.0" prefHeight="62.99999237060547" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="342.6666564941406" minHeight="10.0" prefHeight="342.6666564941406" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="211.33334350585938" minHeight="10.0" prefHeight="155.33334350585938" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <padding>
+      <Insets top="40.0" />
+   </padding>
+   <children>
+      <Label fx:id="filePath" prefHeight="27.0" prefWidth="416.0" text="File Path" GridPane.columnIndex="1" GridPane.columnSpan="2" />
+      <TextArea fx:id="textArea" editable="false" prefHeight="342.0" prefWidth="410.0" styleClass="text-area" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </TextArea>
+      <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0" styleClass="btn-container" GridPane.columnIndex="3" GridPane.rowIndex="1">
+         <children>
+            <MFXButton onAction="#openFileChooser" styleClass="btn" text="Open txt file" />
+            <MFXButton styleClass="btn" text="Open zipp file" />
+            <MFXButton onAction="#compressAndSaveFile" styleClass="btn" text="Compress" />
+            <MFXButton styleClass="btn" text="Save as txt" />
+         </children>
+      </FlowPane>
+   </children>
+</GridPane>

@@ -1,0 +1,25 @@
+.btn {
+    -fx-background-color: #4d57e8;
+    -fx-text-fill: white;
+    -fx-max-width: Infinity;
+}
+.container {
+    -fx-background-color: #4d57e830;
+}
+.label {
+    -fx-padding: 5;
+    -fx-background-color: #4d57e830;
+    -fx-background-radius: 5;
+    -fx-text-fill: grey;
+    -fx-alignment: top-left;
+}
+
+.text-area {
+    -fx-control-inner-background: #4d57e880;
+    -fx-highlight-fill: #00ff00;
+}
+
+.btn-container {
+    -fx-orientation: vertical;
+    -fx-vgap: 10;
+}
