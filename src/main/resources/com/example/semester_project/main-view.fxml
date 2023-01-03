@@ -34,9 +34,8 @@
       <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0" styleClass="btn-container" GridPane.columnIndex="3" GridPane.rowIndex="1">
          <children>
             <MFXButton onAction="#openFileChooser" styleClass="btn" text="Open txt file" />
-            <MFXButton styleClass="btn" text="Open zipp file" />
+            <MFXButton onAction="#openZippFile" styleClass="btn" text="Open zipp file" />
             <MFXButton onAction="#compressAndSaveFile" styleClass="btn" text="Compress" />
-            <MFXButton styleClass="btn" text="Save as txt" />
          </children>
       </FlowPane>
    </children>

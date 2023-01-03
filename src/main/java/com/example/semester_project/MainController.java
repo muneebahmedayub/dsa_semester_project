@@ -4,7 +4,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import logic.StringCompression;
@@ -60,6 +59,8 @@ public class MainController {
 
         try {
             sc.compressToFile(file.getAbsolutePath(), textArea.getText());
+            textArea.setText("");
+            filePath.setText("");
         } catch (Exception e) {
             Alert a = new Alert(Alert.AlertType.NONE);
             a.setContentText("An error occured during file writing");
@@ -76,17 +77,8 @@ public class MainController {
         filePath.setText(file.getAbsolutePath());
         System.out.println(file);
         try {
-            FileReader reader = new FileReader(file.getAbsoluteFile());
-            BufferedReader br = new BufferedReader(reader);
-            String line = br.readLine();
-            String text = "";
-            while (line != null) {
-                text += line + "\n";
-                line = br.readLine();
-            }
-            textArea.setText(text);
-            sc.decompressFile(text);
-            br.close();
+            String decodedText = sc.decompressFile(file.getAbsolutePath());
+            textArea.setText(decodedText);
         } catch (Exception e) {
             Alert a = new Alert(Alert.AlertType.NONE);
             a.setContentText("An error occured during file reading");

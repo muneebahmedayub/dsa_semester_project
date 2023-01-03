@@ -1,8 +1,6 @@
 package logic;
 
-import java.io.*;
 import java.util.LinkedList;
-import java.util.Scanner;
 
 public class StringCompression {
     MinPriorityQ charFreq;
@@ -112,8 +110,9 @@ public class StringCompression {
         f.close();
     }
 
-    public void decompressFile(String fileName){
+    public String decompressFile(String fileName){
         BinaryFile f = new BinaryFile(fileName, 'r');
+        String decodedText = "";
         String stt = "";
         do{
             if (f.readBit()) {
@@ -123,11 +122,13 @@ public class StringCompression {
             }
             char c = encoded.hasBits(stt);
             if (c != '\0') {
+                decodedText += c;
                 System.out.print(c);
                 stt = "";
             }
 
         }while(f.EndOfFile());
         System.out.println();
+        return decodedText;
     }
 }
