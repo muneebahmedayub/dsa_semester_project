@@ -23,3 +23,7 @@
     -fx-orientation: vertical;
     -fx-vgap: 10;
 }
+.btn-container {
+    -fx-orientation: vertical;
+    -fx-vgap: 10;
+}
